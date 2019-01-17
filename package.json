@@ -1,0 +1,23 @@
+{
+  "name": "SP2013.Typescript.Webparts",
+  "version": "1.0.0",
+  "description": "This project contains the webparts for OSD administration app",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack"
+  },
+  "author": "Unnikannan Ayilliath",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "spsave-webpack-plugin": "^2.0.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@pnp/pnpjs": "^1.2.8"
+  }
+}
