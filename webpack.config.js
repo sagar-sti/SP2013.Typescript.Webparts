@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SPSaveWebpackPlugin = require('spsave-webpack-plugin');
-const nodeExternals= require('webpack-node-externals');
 module.exports = {
   entry: {
     helloworld:'./app/helloworld/helloworld.ts',
@@ -17,13 +16,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.ts', '.js' ],
-    alias: {
-      "@pnp/pnpjs":"https://cdnjs.cloudflare.com/ajax/libs/pnp-pnpjs/1.2.7/pnpjs.es5.umd.bundle.min.js"
-    }
+    extensions: [ '.ts', '.js' ]
   },
   target: "node",
-  externals:[nodeExternals()],
+  externals:{
+    '@pnp/pnpjs': 'pnp'
+  },
   output: {
     publicPath:'http://siteurl/Style Library/webparts', // to get correct path inside sharepoint
     filename: '[name]-bundle.js',
@@ -44,7 +42,7 @@ module.exports = {
       "coreOptions": {
           "checkin": true,
           "checkinType": 1,
-          "siteUrl": "http://siteurl/"
+          "siteUrl": "http://siteurl"
       },
       "credentialOptions": null,
       "fileOptions": {
